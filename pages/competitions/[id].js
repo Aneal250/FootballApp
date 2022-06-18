@@ -3,6 +3,8 @@ import Hero from "../../components/Hero";
 import Head from "next/head";
 import Footer from "../../components/Footer";
 import Link from "next/link";
+import StandingsCard from "../../components/StandingsCard";
+import data2 from "../../components/data2";
 
 const Competition = () => {
 	return (
@@ -42,6 +44,23 @@ const Competition = () => {
 						<div className="w-1/2 text-center text-white font-medium">
 							<h4>MATCHES</h4>
 						</div>
+					</div>
+					<div className=" rounded-lg my-4 border shadow-lg py-8 overflow-x-auto mt-4 pl-6">
+						<div className="flex text-gray-700 font-bold">
+							<div className="w-14 flex-shrink-0"></div>
+							<div className="w-52 flex-shrink-0 flex">Team</div>
+							<div className="w-14 flex-shrink-0">MP</div>
+							<div className="w-14 flex-shrink-0">W</div>
+							<div className="w-14 flex-shrink-0">D</div>
+							<div className="w-14 flex-shrink-0">L</div>
+							<div className="w-14 flex-shrink-0">GF</div>
+							<div className="w-14 flex-shrink-0">GA</div>
+							<div className="w-14 flex-shrink-0">Pts</div>
+						</div>
+						<hr className="w-[95%]  mt-2" />
+						{data2.map((standing, index) => (
+							<StandingsCard standing={standing} key={index} index={index} />
+						))}
 					</div>
 				</div>
 			</div>
