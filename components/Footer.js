@@ -11,6 +11,7 @@ const Footer = () => {
 							href="https://www.linkedin.com/in/anaelennaemeka/"
 							className="fancy-link"
 							target="_blank"
+							rel="noreferrer"
 						>
 							Aneal EmekaH
 						</a>
@@ -21,6 +22,7 @@ const Footer = () => {
 							href="https://www.football-data.org/"
 							className="fancy-link"
 							target="_blank"
+							rel="noreferrer"
 						>
 							Football Data API
 						</a>

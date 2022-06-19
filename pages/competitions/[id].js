@@ -76,7 +76,7 @@ const Competition = () => {
 			FetchAllStandings();
 			FetchAllMatchFixtures();
 		}
-	}, [router.isReady]);
+	}, [router.isReady, FetchAllMatchFixtures, FetchAllStandings]);
 
 	return (
 		<>
