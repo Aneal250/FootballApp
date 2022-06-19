@@ -8,13 +8,13 @@ const Card = ({ data }) => {
 				<div className="px-4 py-6  rounded-sm">
 					<div className="flex ">
 						<div className="px-2">
-							<img src="/img/ELC.png" alt="" className="w-[80px]" />
+							<img src={data.emblemUrl} alt="" className="w-[80px]" />
 						</div>
 						<div className="grow flex-col items-center">
 							<div>
-								<h2 className="text-2xl text-gray-800">{data.competition}</h2>
+								<h2 className="text-2xl text-gray-800">{data.name}</h2>
 							</div>
-							<div className="text-sm mt-4 text-gray-500">{data.country}</div>
+							<div className="text-sm mt-4 text-gray-500">{data.area.name}</div>
 						</div>
 					</div>
 				</div>
