@@ -13,7 +13,10 @@ import axios from "axios";
 
 const Competition = () => {
 	const [isLoading, setIsLoading] = useState(true);
+	const [isLoadingFixtures, setIsLoadingFixtures] = useState(true);
+
 	const [competitionName, setCompetitionName] = useState("");
+	const [fixtures, setFixtures] = useState([]);
 	const [data, setData] = useState([]);
 
 	const router = useRouter();
@@ -35,8 +38,32 @@ const Competition = () => {
 			setData(response.data.standings);
 
 			setCompetitionName(response.data.competition.name);
-
 			setIsLoading(false);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const FetchAllMatchFixtures = async () => {
+		const payload = {
+			headers: {
+				"x-auth-token": `908778af16c548488b5e6457a5a3d48d`,
+			},
+		};
+
+		let season;
+
+		season ? 2022 : 2021;
+
+		try {
+			let response = await axios(
+				`https://api.football-data.org/v2/competitions/${id}/matches?season=2022&matchday=1`,
+				payload
+			);
+
+			setFixtures(response.data.matches);
+
+			setIsLoadingFixtures(false);
 		} catch (error) {
 			console.log(error);
 		}
@@ -47,6 +74,7 @@ const Competition = () => {
 			const { id } = router.query;
 			if (!id) return null;
 			FetchAllStandings();
+			FetchAllMatchFixtures();
 		}
 	}, [router.isReady]);
 
@@ -145,11 +173,16 @@ const Competition = () => {
 							</Tab.Panel>
 							<Tab.Panel>
 								<p className="text-2xl my-6 px-4 font-thin">Match Week 46</p>
-								<div className="flex flex-wrap">
-									{data.map((data) => (
-										<CardMatches data={data} key={data.id} />
-									))}
-								</div>
+
+								{isLoadingFixtures ? (
+									<Loading />
+								) : (
+									<div className="flex flex-wrap">
+										{fixtures.map((data, index) => (
+											<CardMatches data={data} key={index} />
+										))}
+									</div>
+								)}
 							</Tab.Panel>
 						</Tab.Panels>
 					</Tab.Group>

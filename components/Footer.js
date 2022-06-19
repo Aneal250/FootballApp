@@ -7,13 +7,21 @@ const Footer = () => {
 				<div className="flex-col text-center">
 					<p>
 						<span className="text-gray-700">Built by </span>
-						<a href="#" className="fancy-link">
+						<a
+							href="https://www.linkedin.com/in/anaelennaemeka/"
+							className="fancy-link"
+							target="_blank"
+						>
 							Aneal EmekaH
 						</a>
 					</p>
 					<p className="text-sm mt-2">
 						Credits{" "}
-						<a href="#" className="fancy-link">
+						<a
+							href="https://www.football-data.org/"
+							className="fancy-link"
+							target="_blank"
+						>
 							Football Data API
 						</a>
 					</p>

@@ -11,10 +11,12 @@ const CardMatches = ({ data }) => {
 								<img src="/img/logo.png" alt="" className="w-[25px]" />
 							</div>
 							<div className="w-3/5">
-								<p className="font-thin">Swansea City AFC</p>
+								<p className="font-thin">{data.homeTeam.name}</p>
 							</div>
 							<div className="w-1/5">
-								<p className="text-right text-lg">0</p>
+								<p className="text-right text-lg">
+									{data.score.fullTime.awayTeam}
+								</p>
 							</div>
 						</div>
 
@@ -23,10 +25,12 @@ const CardMatches = ({ data }) => {
 								<img src="/img/logo2.png" alt="" className="w-[25px]" />
 							</div>
 							<div className="w-3/5">
-								<p>Swansea City AFC</p>
+								<p>{data.awayTeam.name}</p>
 							</div>
 							<div className="w-1/5">
-								<p className="text-right text-lg">1</p>
+								<p className="text-right text-lg">
+									{data.score.fullTime.awayTeam}
+								</p>
 							</div>
 						</div>
 					</div>
