@@ -31,7 +31,7 @@ const Competition = () => {
 
 		try {
 			const response = await axios(
-				`http://api.football-data.org/v2/competitions/${id}/standings?standingType=TOTAL`,
+				`https://api.football-data.org/v2/competitions/${id}/standings?standingType=TOTAL`,
 				payload
 			);
 

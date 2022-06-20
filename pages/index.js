@@ -21,7 +21,7 @@ export default function Home() {
 
 		try {
 			const response = await axios(
-				"http://api.football-data.org/v2/competitions?areas=2077&plan=TIER_ONE",
+				"https://api.football-data.org/v2/competitions?areas=2077&plan=TIER_ONE",
 				payload
 			);
 
